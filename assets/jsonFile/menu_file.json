@@ -1,0 +1,31 @@
+{
+  "id": "660cf07ee41b4d34e4de5ecb",
+  "record": {
+    "items": [
+      {
+        "title": "Item 1",
+        "icon": "icon1.png",
+        "URL": "https://example.com/item1",
+        "id": 1
+      },
+      {
+        "title": "Item 2",
+        "icon": "icon2.png",
+        "URL": "https://example.com/item2",
+        "id": 2
+      },
+      {
+        "title": "Item 3",
+        "icon": "icon3.png",
+        "URL": "https://example.com/item3",
+        "id": 3
+      }
+    ]
+  },
+  "metadata": {
+    "name": "MenuItem",
+    "readCountRemaining": 98,
+    "timeToExpire": 86387,
+    "createdAt": "2024-04-03T06:00:30.279Z"
+  }
+}
