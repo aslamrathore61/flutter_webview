@@ -1,12 +1,14 @@
 import 'dart:async';
+import 'dart:js_interop';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:webview_rnd/model/notes_model.dart';
 import '../bloc/native_item_bloc.dart';
 import '../bloc/native_item_event.dart';
 import '../bloc/native_item_state.dart';
-import 'package:hive/hive.dart';
-
+import '../boxes/boxes.dart';
 import '../model/NativeItem.dart';
+import 'package:hive/hive.dart';
 
 /*  readJson().then((nativeItem) {
       print('nativeItem ${nativeItem.toJson()}');
@@ -22,8 +24,9 @@ class SplashScreen extends StatelessWidget {
 
     nativeItemBloc.add(GetMenuDetailsEvents());
 
-    nativeItemBloc.stream.listen((state) {
+    nativeItemBloc.stream.listen((state) async {
       if (state is NativeItemLoaded) {
+
 
         saveDataToDatabase(state.nativeItem);
 
@@ -51,13 +54,13 @@ class SplashScreen extends StatelessWidget {
 }
 
 
-void saveDataToDatabase(NativeItem nativeItem) {
-  // Implement your logic to save data to the database here
-/*  print('Saving data to database: ${nativeItem.toJson()}');
+void saveDataToDatabase(NativeItem nativeItem) async {
 
-  final myBox = Hive.box('SaveMaxBox');
-  NativeItem nativeObj = NativeItem(id: nativeItem.id, record: nativeItem.record, metadata: nativeItem.metadata);
-  myBox.put('NativeItem', nativeObj);*/
 
+  final data  = NoteModel(title: 'aslmTitle', description: "aslamDescription");
+
+  final box = Boxes.getData();
+  box.add(data);
+  data.save();
 
 }

@@ -24,14 +24,14 @@ class _HomePageState extends State<HomePage> {
     WebViewController controller = WebViewController();
     _controller = LoadUrlController(controller, '$BaseUrl', context);
 
- /*   final myBox = Hive.box('SaveMaxBox');
+    callLocalData();
+
+
+    /*   final myBox = Hive.box('SaveMaxBox');
 
     // Retrieve JSON object
     final retrievedData = myBox.get('NativeItem') as NativeItem;
     print("nativeobj ${retrievedData.record?.toJson()}"); // John Doe*/
-
-
-
   }
 
   @override
@@ -83,5 +83,10 @@ class _HomePageState extends State<HomePage> {
         _buildBody();
       });
     });
+  }
+
+  Future<void> callLocalData() async {
+    var box = await Hive.openBox("aslam");
+    print('boxDetails ${box.get('name')}');
   }
 }

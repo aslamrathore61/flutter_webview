@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 
 import '../model/NativeItem.dart';
 
-
 @immutable
 abstract class NativeItemState {}
 
